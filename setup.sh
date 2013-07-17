@@ -44,6 +44,9 @@
 #sudo apt-get install python-rpi.gpio python3-rpi.gpio
 #cp nes-keypress.py /usr/bin/
 
+# Install the uinput library
+python ./python-uinput-0.9/setup.py --prefix=/usr/local
+
 # Reboot the Pi
 echo "******** INSTALLATION COMPLETE ********"
 echo "******* PRESS ANY KEY TO REBOOT *******"

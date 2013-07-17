@@ -1,0 +1,25 @@
+#! /bin/sh
+# Copyright (c) 2013 Ryan Mueller
+# All rights reserved.
+#
+# Author: Ryan Mueller, 2013
+#
+### BEGIN INIT INFO
+# Provides:	emulationstation
+# Required-Start: $all
+# Required-Stop:
+# Default-Start: 2 3 4 5
+# Default-Stop:
+# Short-Description: Starts emulation station
+# Description: Starts emulation station
+### END INIT INFO
+
+# Start Emulation Station
+case "$1" in
+  start)
+      /usr/bin/emulationstation
+      ;;
+  stop|restart|reload|status)
+      echo "Operation not supported"
+      ;;
+esac

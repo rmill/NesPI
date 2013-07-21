@@ -46,6 +46,7 @@
 
 # Install the uinput library
 python ./python-uinput-0.9/setup.py --prefix=/usr/local
+python modprobe uinput
 
 # Reboot the Pi
 echo "******** INSTALLATION COMPLETE ********"

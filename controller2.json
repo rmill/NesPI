@@ -1,0 +1,16 @@
+{
+  "latch_pin": 10,
+  "clock_pin": 8,
+  "data_pin": 12,
+  "key_mapping": {
+    "a": "KEY_N",
+    "b": "KEY_M",
+    "select": "KEY_U",
+    "start": "KEY_O",
+    "up": "KEY_I",
+    "down": "KEY_K",
+    "left": "KEY_J",
+    "right": "KEY_L",
+    "menu": "KEY_P"
+  }
+}

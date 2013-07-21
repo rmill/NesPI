@@ -1,5 +1,5 @@
 {
-  "latch_pin": 10,
+  "latch_pin": 5,
   "clock_pin": 3,
   "data_pin": 7,
   "key_mapping": {

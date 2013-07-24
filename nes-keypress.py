@@ -125,7 +125,7 @@ def getKeyMapping(config):
     keyMapping = {}
 
     for index in config:
-        keyMapping[index] = getattr(uinput, input[config])
+        keyMapping[index] = getattr(uinput, config[index])
 
     return keyMapping
 

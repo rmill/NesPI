@@ -18,7 +18,7 @@
 case "$1" in
   start)
       python /usr/bin/nes-keypress.py -if /usr/bin/nes-keypress/controller1.json
-	  python /usr/bin/nes-keypress.py -if /usr/bin/nes-keypress/controller1.json
+	  python /usr/bin/nes-keypress.py -if /usr/bin/nes-keypress/controller2.json
       ;;
   stop|restart|reload|status)
       echo "Operation not supported"

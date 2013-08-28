@@ -17,6 +17,10 @@
 # Start Emulation Station
 case "$1" in
   start)
+	  # Kill the splash screen
+      PID=`pidof fbi`
+      kill $PID
+  
       /usr/bin/emulationstation
       ;;
   stop|restart|reload|status)

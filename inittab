@@ -4,11 +4,8 @@
 # The default runlevel.
 id:2:initdefault:
 
-# Switch to tty2
-swt2::sysinit:/bin/chvt 2
-
 # Display the splash screen
-ss::sysinit:/etc/init.d/splash
+ss::sysinit:/usr/bin/fbi -noverbose -t 0.01 -T 2 /usr/bin/splashscreen/*
 
 # Boot-time system configuration/initialization script.
 # This is run first except when booting in emergency (-b) mode.

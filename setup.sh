@@ -1,11 +1,8 @@
 #!/bin/bash
 
-# Configure the raspberry pi
-sudo raspi-config
-
 # Update Apt Repositories
-sudo apt-get update
-sudo apt-get update -y
+#sudo apt-get update
+#sudo apt-get update -y
 
 # Install Git
 sudo apt-get install -y git dialog
@@ -13,37 +10,40 @@ sudo apt-get install -y git dialog
 # Install RetroArch and EmulationStaion
 sudo git clone --depth=0 git://github.com/petrockblog/RetroPie-Setup.git /var/RetroPie
 sudo chmod +x /var/RetroPie/retropie_setup.sh
-sudo /var/RetroPie/retropie_setup.sh
+/var/RetroPie/retropie_setup.sh
 sudo mkdir /home/pi/.emulationstation
 sudo ln -s /home/pi/.emulationstation /.emulationstation
-#sudo ln -s es_system.cfg /.emulationstation/es_system.cfg
-sudo ln -s es_input.cfg /.emulationstation/es_input.cfg
+sudo cp es_systems.cfg /.emulationstation/es_systems.cfg
+sudo cp es_input.cfg /.emulationstation/es_input.cfg
 
 # Hide the Kernel Logging
-#cat cmdline.txt > /boot/cmdline.txt
+sudo cp cmdline.txt /boot/cmdline.txt
 
 # Setup Boot
-#cat inittab > /etc/inittab
+sudo cp inittab /etc/inittab
 
-# Add Splash Screen
-#cp splash /etc/init.d
+# Add Splash Screen (custom fbi compilation)
+sudo dpkg -i fbi_2.07-10_armhf.deb
+sudo cp -r splashscreen /usr/bin/splashscreen
 
 # Add Init Scripts
-sudo ln -s emulation-station /etc/init.d/emulation-station
-sudo ln -s nes-keypress /etc/init.d/nes-keypress
-sudo update-rc.d /etc/init.d/emulation-station defaults
-sudo update-rc.d /etc/init.d/nes-keypress defaults
+sudo cp emulation-station /etc/init.d/emulation-station
+sudo cp nes-keypress /etc/init.d/nes-keypress
+sudo update-rc.d emulation-station defaults
+sudo update-rc.d nes-keypress defaults
 
 # Install Python Libraries
-sudo apt-get install python-rpi.gpio python3-rpi.gpio
-sudo ln -s nes-keypress.py /usr/bin/nes-keypress.py
+sudo apt-get install python-rpi.gpio python3-rpi.gpio libudev-dev
+
+# Setup NES controller driver
+sudo cp nes-keypress.py /usr/bin/nes-keypress.py
 sudo mkdir /usr/bin/nes-keypress
-sudo ln -s controller1.json /usr/bin/nes-keypress/controller1.json
-sudo ln -s controller1.json /usr/bin/nes-keypress/controller2.json
+sudo cp controller1.json /usr/bin/nes-keypress/controller1.json
+sudo cp controller2.json /usr/bin/nes-keypress/controller2.json
 
 # Install the uinput library
 cd python-uinput-0.9
-sudo python ./python-uinput-0.9/setup.py install --prefix=/usr/local
+sudo python setup.py install --prefix=/usr/local
 sudo python modprobe uinput
 
 # Reboot the Pi

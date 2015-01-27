@@ -31,6 +31,8 @@ sudo cp -r lib/splashscreen /usr/bin/splashscreen
 # Add Init Scripts
 sudo cp daemons/emulation-station /etc/init.d/emulation-station
 sudo cp daemons/nes-keypress /etc/init.d/nes-keypress
+sudo chmod 775 /etc/init.d/emulation-station
+sudo chmod 775 /etc/init.d/nes-keypress
 sudo update-rc.d emulation-station defaults
 sudo update-rc.d nes-keypress defaults
 

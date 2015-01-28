@@ -13,8 +13,9 @@ sudo apt-get install -y --force-yes git dialog
 sudo git clone --depth=0 git://github.com/petrockblog/RetroPie-Setup.git /var/RetroPie
 sudo chmod +x /var/RetroPie/retropie_setup.sh
 sudo /var/RetroPie/retropie_setup.sh
-sudo mkdir /home/pi/.emulationstation
-sudo ln -s /home/pi/.emulationstation /.emulationstation
+sudo mkdir /var/RetroPie/roms
+sudo ln -s /RetroPie /var/RetroPie
+sudo mkdir /.emulationstation
 sudo cp assets/es_systems.cfg /.emulationstation/es_systems.cfg
 sudo cp assets/es_input.cfg /.emulationstation/es_input.cfg
 

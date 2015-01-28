@@ -46,9 +46,9 @@ sudo apt-get install python-rpi.gpio python3-rpi.gpio libudev-dev
 # Setup NES controller driver
 sudo git clone https://github.com/rmill/nes-keypress.git /var/nes-keypress
 sudo cp /var/nes-keypress/nes-keypress.py /usr/bin/nes-keypress.py
-sudo mkdir /usr/bin/nes-keypress
-sudo cp assets/controller1.json /usr/bin/nes-keypress/controller1.json
-sudo cp assets/controller2.json /usr/bin/nes-keypress/controller2.json
+sudo mkdir /.nes-keypress
+sudo cp assets/controller1.json /.nes-keypress/controller1.json
+sudo cp assets/controller2.json /.nes-keypress/controller2.json
 
 # Install the uinput library
 cd lib/python-uinput-0.9

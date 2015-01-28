@@ -5,7 +5,7 @@
 id:2:initdefault:
 
 # Display the splash screen
-ss::sysinit:/usr/bin/mplayer -loop 0 /.nespi/splashscreen.mpg &
+ss::sysinit:/usr/bin/mplayer -loop 0 /.nespi/splashscreen &
 
 # Boot-time system configuration/initialization script.
 # This is run first except when booting in emergency (-b) mode.

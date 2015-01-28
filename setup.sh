@@ -24,9 +24,12 @@ sudo cp assets/cmdline.txt /boot/cmdline.txt
 # Setup Boot
 sudo cp assets/inittab /etc/inittab
 
-# Add Splash Screen (custom fbi compilation)
-sudo dpkg -i lib/fbi_2.07-10_armhf.deb
-sudo cp -r lib/splashscreen /usr/bin/splashscreen
+# Add Splash Screen
+sudo apt-get install mplayer
+
+# Copy over Splash Screen
+sudo mkdir /.nespi
+sudo cp /assets/splashscreen /.nespi/splashscreen
 
 # Add Init Scripts
 sudo cp daemons/emulation-station /etc/init.d/emulation-station
